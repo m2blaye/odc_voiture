@@ -3,10 +3,20 @@
     <head>
         <meta charset="UTF-8">
         <title>{% block title %}Welcome!{% endblock %}</title>
+        
+        <link href="{{ asset('css/styles.css') }}" rel="stylesheet" type="text/css"/>
         {% block stylesheets %}{% endblock %}
     </head>
     <body>
-        {% block body %}{% endblock %}
-        {% block javascripts %}{% endblock %}
+        <div class="container">
+            <ul>
+                <li><a href="/personne">Personne</a></li>
+                <li><a href="{{ path('voiture_index') }}">Voiture</a></li>
+                <li><a href="/voiture">Pays</a></li>
+            </ul>
+            {% block body %}{% endblock %}
+            {% block javascripts %}{% endblock %}
+        </div>
+        
     </body>
 </html>

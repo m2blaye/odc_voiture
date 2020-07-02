@@ -1,0 +1,31 @@
+{% extends 'base.html.twig' %}
+
+{% block title %} Personne{% endblock %}
+
+{% block body %}
+     <h1><a href="{{ path('personne_create') }}">Personne</a> </h1>
+
+    <table>
+        <tr>
+            <th>Prénom</th>
+            <th>Nom</th>
+            <th>Date</th>
+            <th>Taille</th>
+            <th>Salaire</th>
+            <th colspan="2">Action</th>
+        </tr>
+        {% for personne in personnes  %}
+            <tr>
+                <td>{{personne.prenom}}</td>
+                <td>{{personne.nom}} </td>
+                <td>{{personne.date|date('d/m/Y')}}</td>
+                <td>{{personne.adresse}} </td>
+                <td>{{personne.taille}}</td>
+                <td><a href="">Modifier</a></td>
+                <td><a href="">Supprimer</a></td>
+                <td><a href="{{ path('personne_read', {'id': personne.id}) }}">Voire</a></td>
+            </tr>
+        {% endfor %}
+       
+    </table>
+{% endblock %}

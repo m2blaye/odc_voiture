@@ -1,0 +1,13 @@
+{% extends 'base.html.twig' %}
+
+{% block title %} New Voiture{% endblock %}
+
+{% block body %}
+    <h1>Ajouter une voiture </h1>
+    {{ form_start(form)}}
+    <div class="form-group">
+        {{form_widget(form)}}
+        <input type="submit" value="Validez">
+    </div>
+    {{ form_end(form)}}
+{% endblock %}

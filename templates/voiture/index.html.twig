@@ -1,0 +1,30 @@
+{% extends 'base.html.twig' %}
+
+{% block title %} voiture{% endblock %}
+
+{% block body %}
+      <h1><a href="{{ path('voiture_create') }}">Voiture</a> </h1>
+    <table>
+        <tr>
+            <th>Numero</th>
+            <th>type</th>
+            <th>Annnee</th>
+            <th>Carburant</th>
+            <th>Prix</th>
+            <th colspan="2">Action</th>
+        </tr>
+        {% for voiture in voitures  %}
+            <tr>
+                <td>{{voiture.numero}}</td>
+                <td>{{voiture.type}} </td>
+                <td>{{voiture.annee|date('d/m/Y')}}</td>
+                <td>{{voiture.carburant}} </td>
+                <td>{{voiture.prix}}</td>
+                <td><a href="{{ path('voiture_edite', {'id': voiture.id}) }}">Modifier</a></td>
+                <td><a href="{{ path('voiture_delete', {'id': voiture.id}) }}" onclick="return confirm('Voulez vous supprimer ?');">Supprimer</a></td>
+                <td><a href="{{ path('voiture_read', {'id': voiture.id}) }}">Voire</a></td>
+            </tr>
+        {% endfor %}
+       
+    </table>
+{% endblock %}

@@ -1,0 +1,26 @@
+.container{
+    background-color:#c1c1c1;
+    width: 80%;
+    margin: auto;
+    padding: 10px;
+}
+
+h1{
+    color: aqua;
+}
+
+label{
+    display: inline-block;
+    width: 200px;
+}
+
+label+div{
+    display: inline;
+}
+input,select{
+    padding: 5px;
+    border-radius: 5px;
+}
+#voiture_pays label{
+    display: inline;
+}
